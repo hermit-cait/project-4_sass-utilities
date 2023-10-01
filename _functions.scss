@@ -1,0 +1,24 @@
+@function setTextColor($color){
+  @if lightness($color) > 50 {
+    @return black
+  }
+  @else {
+    @return white
+  }
+}
+
+@function resize($value, $size){
+  @if ($size == sm) {
+    @return $value * map-get($size-map, $size);
+  } @else if ($size == md) {
+    @return $value;
+  } @else if ($size == lg) {
+    @return $value * map-get($size-map, $size);
+  } @else if ($size == xl) {
+    @return $value * map-get($size-map, $size);
+  } @else if ($size == xxl) {
+    @return $value * map-get($size-map, $size);
+  } @else if ($size == block) {
+    @return 100%;
+  }
+}

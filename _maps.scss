@@ -1,0 +1,49 @@
+// Colors map
+
+$colors-map: (
+  primary: $primary-color,
+  secondary: $secondary-color,
+  success: $success-color,
+  danger: $danger-color,
+  warning: $warning-color,
+  info: $info-color,
+  light: $light-color,
+  dark: $dark-color,
+  accept: $accept-color,
+  facebook-light: $facebook-light-color,
+  facebook-dark: $facebook-dark-color,
+  twitter: $twitter-color,
+  google: $google-color,
+  instagram: $instagram-color,
+  youtube: $youtube-color,
+  whatsapp: $whatsapp-color,
+);
+
+// Sizes map
+
+$size-map: (
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+  block: 100,
+);
+
+// Text alignment map
+
+$text-align-map: (
+  left: left,
+  center: center,
+  right: right,
+  justify: justify,
+);
+
+// Distances map
+
+$distance-map: (
+  1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+);
