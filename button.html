@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sassUtilities.css" />
+    <title>Button Component</title>
+  </head>
+  <body>
+    <h1 class="title text-center">Scss Button Component</h1>
+    <div class="container text-center">
+      <h2 class="subtitle">Regular Button</h2>
+
+      <button class="btn">Add</button>
+
+      <h2 class="subtitle">Button Types</h2>
+
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-warning">Warning</button>
+      <button class="btn btn-info">Info</button>
+      <button class="btn btn-light">Light</button>
+      <button class="btn btn-dark">Dark</button>
+      <button class="btn btn-accept">Accept</button>
+
+      <h2 class="subtitle">Social media button Types</h2>
+
+      <a
+        href="https://www.youtube.com/c/MenyhartMedia"
+        target="_blank"
+        class="btn btn-youtube"
+        >YouTube</a
+      >
+      <a href="https://facebook.com" target="_blank" class="btn btn-facebook"
+        >Facebook</a
+      >
+      <a href="https://twitter.com" target="_blank" class="btn btn-twitter"
+        >Twitter</a
+      >
+      <a href="https://instagram.com" target="_blank" class="btn btn-instagram"
+        >Instagram</a
+      >
+
+      <h2 class="subtitle">Button Sizes</h2>
+      <button class="btn btn-sm">Small</button>
+      <button class="btn btn-block">Block</button>
+      <button class="btn btn-lg">Large</button>
+
+      <h2 class="subtitle">Close Buttons</h2>
+      <button class="btn btn-close">&times;</button>
+      <button class="btn btn-close-white">&times;</button>
+      <button class="btn btn-close-dark">&times;</button>
+    </div>
+    <!--  -->
+
+    <script>
+      document.querySelectorAll("button").forEach((btn) => {
+        btn.onclick = () => {
+          const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+          const bgColor = (document.body.style.backgroundColor =
+            "#" + randomColor);
+
+          // let txtColor = (document.body.style.color = "#" + randomColor);
+          // const root = document.querySelector(":root");
+          // function changeTextColor() {
+          //   const jsColor =
+          //     getComputedStyle(root).getPropertyValue("--js-color");
+          //   console.log(jsColor);
+          // }
+          // changeTextColor();
+        };
+      });
+    </script>
+  </body>
+</html>

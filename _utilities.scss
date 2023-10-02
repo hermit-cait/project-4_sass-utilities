@@ -16,8 +16,10 @@
 }
 
 .d-flex {
-  display: flex;
-  // include the flex mixin
+  @include displayFlex();
+  &.flex-column {
+    @include displayFlex(column);
+  }
 }
 
 .d-grid {
@@ -47,12 +49,13 @@
 
 /* Padding classes */
 
+.p-auto {
+  padding: auto
+}
+
 @each $padding-name, $padding in $distance-map {
   .p-#{$padding-name} {
     padding: $padding;
-  }
-  .p-auto {
-    padding: auto
   }
   .pt-#{$padding-name} {
     padding-top: $padding;
@@ -78,12 +81,13 @@
 
 /* Margin classes */
 
+.m-auto {
+  margin: auto
+}
+
 @each $margin-name, $margin in $distance-map {
   .m-#{$margin-name} {
     margin: $margin;
-  }
-  .m-auto {
-    margin: auto
   }
   .mt-#{$margin-name} {
     margin-top: $margin;
@@ -105,5 +109,37 @@
     margin-top: $margin;
     margin-bottom: $margin;
   }
+}
 
+/* Title and subtitle classes */
+
+// Title class
+
+.title {
+  @include title;
+  &-larger {
+    @include title(5rem, 600, 4)
+  }
+}
+
+// Subtitle class
+
+.subtitle {
+  @include subtitle;
+}
+
+/* Text colors */
+
+@each $color-name, $color in $colors-map {
+  .text-#{$color-name} {
+    color: $color;
+  }
+}
+
+/* Background colors */
+
+@each $color-name, $color in $colors-map {
+  .bg-#{$color-name} {
+    background-color: $color;
+  }
 }

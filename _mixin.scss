@@ -1,0 +1,20 @@
+@mixin title($fontSize: $xxl * 1rem, $fontWeight: 500, $marginY: 3rem) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  margin: $marginY 0;
+}
+
+@mixin subtitle($fontSize: $xl * 1rem, $fontWeight: 400, $marginY: 2rem) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  margin: $marginY 0;
+}
+
+@mixin displayFlex($flexDirection: "row") {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @if $flexDirection == "column" {
+    flex-direction: column;
+  }
+}
