@@ -1,3 +1,51 @@
+/* Main button class */
+
 .btn {
   margin: 0.25rem 0.125rem;
+  padding: 0.35rem 1.25rem;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  border-radius: 0.3rem;
+  border: none;
+  color: #fff;
+  background-color: #000;
+  box-shadow: 0 2px 5px rgba(#333, 0.3);
+  transition: 0.3s ease;
+  &:hover {
+    cursor: pointer;
+    box-shadow: none;
+    background: rgba(#000, 0.75);
+    transition: 0.3s ease;
+  }
+}
+
+/* Button types */
+
+@each $btn-type, $color in $colors-map {
+  .btn-#{$btn-type}{
+    @extend .btn;
+    background-color: $color;
+    &:hover {
+      background: rgba($color, 0.75);
+    }
+    color: setTextColor($color);
+  } 
+}
+
+/* Button sizes */
+
+@each $btn-size, $size in $size-map {
+  @if $btn-size == block {
+    .btn-#{$btn-size} {
+      width: 90%;
+    }
+  } @else {
+    .btn-#{$btn-size} {
+      margin: resize(0.25rem, $btn-size) resize(0.125rem, $btn-size);
+      padding: resize(0.35rem, $btn-size) resize(1.25rem, $btn-size);
+      font-size: resize(16px, $btn-size);
+    }
+  }
 }

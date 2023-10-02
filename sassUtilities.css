@@ -483,6 +483,188 @@ body {
   background-color: #25d366;
 }
 
-.btn {
+/* Main button class */
+.btn, .btn-whatsapp, .btn-youtube, .btn-instagram, .btn-google, .btn-twitter, .btn-facebook-dark, .btn-facebook-light, .btn-accept, .btn-dark, .btn-light, .btn-info, .btn-warning, .btn-danger, .btn-success, .btn-secondary, .btn-primary {
   margin: 0.25rem 0.125rem;
+  padding: 0.35rem 1.25rem;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  border-radius: 0.3rem;
+  border: none;
+  color: #fff;
+  background-color: #000;
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.3);
+  transition: 0.3s ease;
+}
+.btn:hover, .btn-whatsapp:hover, .btn-youtube:hover, .btn-instagram:hover, .btn-google:hover, .btn-twitter:hover, .btn-facebook-dark:hover, .btn-facebook-light:hover, .btn-accept:hover, .btn-dark:hover, .btn-light:hover, .btn-info:hover, .btn-warning:hover, .btn-danger:hover, .btn-success:hover, .btn-secondary:hover, .btn-primary:hover {
+  cursor: pointer;
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.75);
+  transition: 0.3s ease;
+}
+
+/* Button types */
+.btn-primary {
+  background-color: #7633f9;
+  color: black;
+}
+.btn-primary:hover {
+  background: rgba(118, 51, 249, 0.75);
+}
+
+.btn-secondary {
+  background-color: #ff9800;
+  color: white;
+}
+.btn-secondary:hover {
+  background: rgba(255, 152, 0, 0.75);
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+.btn-success:hover {
+  background: rgba(40, 167, 69, 0.75);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: black;
+}
+.btn-danger:hover {
+  background: rgba(220, 53, 69, 0.75);
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: black;
+}
+.btn-warning:hover {
+  background: rgba(255, 193, 7, 0.75);
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  color: white;
+}
+.btn-info:hover {
+  background: rgba(23, 162, 184, 0.75);
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  color: black;
+}
+.btn-light:hover {
+  background: rgba(248, 249, 250, 0.75);
+}
+
+.btn-dark {
+  background-color: #343a40;
+  color: white;
+}
+.btn-dark:hover {
+  background: rgba(52, 58, 64, 0.75);
+}
+
+.btn-accept {
+  background-color: #284ea7;
+  color: white;
+}
+.btn-accept:hover {
+  background: rgba(40, 78, 167, 0.75);
+}
+
+.btn-facebook-light {
+  background-color: #1877f2;
+  color: black;
+}
+.btn-facebook-light:hover {
+  background: rgba(24, 119, 242, 0.75);
+}
+
+.btn-facebook-dark {
+  background-color: #3b5998;
+  color: white;
+}
+.btn-facebook-dark:hover {
+  background: rgba(59, 89, 152, 0.75);
+}
+
+.btn-twitter {
+  background-color: #1da1f2;
+  color: black;
+}
+.btn-twitter:hover {
+  background: rgba(29, 161, 242, 0.75);
+}
+
+.btn-google {
+  background-color: #db4437;
+  color: black;
+}
+.btn-google:hover {
+  background: rgba(219, 68, 55, 0.75);
+}
+
+.btn-instagram {
+  background-color: #e1306c;
+  color: black;
+}
+.btn-instagram:hover {
+  background: rgba(225, 48, 108, 0.75);
+}
+
+.btn-youtube {
+  background-color: #ff0000;
+  color: white;
+}
+.btn-youtube:hover {
+  background: rgba(255, 0, 0, 0.75);
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: white;
+}
+.btn-whatsapp:hover {
+  background: rgba(37, 211, 102, 0.75);
+}
+
+/* Button sizes */
+.btn-sm {
+  margin: 0.1875rem 0.09375rem;
+  padding: 0.2625rem 0.9375rem;
+  font-size: 12px;
+}
+
+.btn-md {
+  margin: 0.25rem 0.125rem;
+  padding: 0.35rem 1.25rem;
+  font-size: 16px;
+}
+
+.btn-lg {
+  margin: 0.3125rem 0.15625rem;
+  padding: 0.4375rem 1.5625rem;
+  font-size: 20px;
+}
+
+.btn-xl {
+  margin: 0.625rem 0.3125rem;
+  padding: 0.875rem 3.125rem;
+  font-size: 40px;
+}
+
+.btn-xxl {
+  margin: 0.9375rem 0.46875rem;
+  padding: 1.3125rem 4.6875rem;
+  font-size: 60px;
+}
+
+.btn-block {
+  width: 90%;
 }/*# sourceMappingURL=sassUtilities.css.map */
