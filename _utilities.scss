@@ -1,0 +1,109 @@
+/* Container class */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+
+  &.container-sm {
+    max-width: 782px;
+  }
+  &.container-md {
+    max-width: 1280px;
+  }
+  &.container-slg {
+    max-width: 1440px;
+  }
+}
+
+.d-flex {
+  display: flex;
+  // include the flex mixin
+}
+
+.d-grid {
+  display: grid;
+  // include the grid mixin
+}
+
+/* Text alignment classes */
+
+@each $text-name, $align in $text-align-map {
+  .text-#{$text-name} {
+    text-align: $align;
+  }
+}
+
+/* Font size classes */
+
+@each $size-name, $size in $size-map {
+  .fs-#{$size-name} {
+    @if $size-name == block {
+      font-size: null;
+    } @else {
+      font-size: $size * 1rem;
+    }
+  }
+}
+
+/* Padding classes */
+
+@each $padding-name, $padding in $distance-map {
+  .p-#{$padding-name} {
+    padding: $padding;
+  }
+  .p-auto {
+    padding: auto
+  }
+  .pt-#{$padding-name} {
+    padding-top: $padding;
+  }
+  .pr-#{$padding-name} {
+    padding-right: $padding;
+  }
+  .pb-#{$padding-name} {
+    padding-bottom: $padding;
+  }
+  .pl-#{$padding-name} {
+    padding-left: $padding;
+  }
+  .px-#{$padding-name} {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+  .py-#{$padding-name} {
+    padding-top: $padding;
+    padding-bottom: $padding;
+  }
+}
+
+/* Margin classes */
+
+@each $margin-name, $margin in $distance-map {
+  .m-#{$margin-name} {
+    margin: $margin;
+  }
+  .m-auto {
+    margin: auto
+  }
+  .mt-#{$margin-name} {
+    margin-top: $margin;
+  }
+  .mr-#{$margin-name} {
+    margin-right: $margin;
+  }
+  .mb-#{$margin-name} {
+    margin-bottom: $margin;
+  }
+  .ml-#{$margin-name} {
+    margin-left: $margin;
+  }
+  .mx-#{$margin-name} {
+    margin-left: $margin;
+    margin-right: $margin;
+  }
+  .my-#{$margin-name} {
+    margin-top: $margin;
+    margin-bottom: $margin;
+  }
+
+}
