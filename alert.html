@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sassUtilities.css" />
+    <title>Alert Component</title>
+  </head>
+  <body>
+    <h1 class="title text-center">Scss Alert Component</h1>
+    <div class="container d-flex flex-column text-center">
+      <h2 class="subtitle">Regular Alert</h2>
+
+      <div class="alert m-auto">Alert</div>
+      <h2 class="subtitle">Alert Types</h2>
+
+      <section class="container-sm m-auto">
+        <div class="alert alert-primary">
+          A simple primary alert—check it out!
+        </div>
+        <div class="alert alert-secondary">Secondary</div>
+        <div class="alert alert-success">Success</div>
+        <div class="alert alert-danger">Danger</div>
+        <div class="alert alert-warning">Warning</div>
+        <div class="alert alert-info">Info</div>
+      </section>
+
+      <h2 class="subtitle">Alert with closing button</h2>
+      <div class="alert alert-primary">
+        <div class="alert-close">
+          <span> A simple primary alert—check it out! </span>
+          <button class="btn btn-close">&times;</button>
+        </div>
+      </div>
+      <div class="alert alert-secondary">
+        <div class="alert-close">
+          <span> A simple primary alert—check it out! </span>
+          <button class="btn btn-close">&times;</button>
+        </div>
+      </div>
+      <div class="alert alert-success">
+        <div class="alert-close">
+          <span> A simple primary alert—check it out! </span>
+          <button class="btn btn-close">&times;</button>
+        </div>
+      </div>
+      <div class="alert alert-danger">
+        <div class="alert-close">
+          <span> A simple primary alert—check it out! </span>
+          <button class="btn btn-close">&times;</button>
+        </div>
+      </div>
+      <div class="alert alert-warning">
+        <div class="alert-close">
+          <span> A simple primary alert—check it out! </span>
+          <button class="btn btn-close">&times;</button>
+        </div>
+      </div>
+      <div class="alert alert-info">
+        <div class="alert-close">
+          <span> A simple primary alert—check it out! </span>
+          <button class="btn btn-close">&times;</button>
+        </div>
+      </div>
+    </div>
+
+    <!--TODO create Alert example   -->
+    <div class="d-flex flex-column">
+      <h2 class="subtitle text-center">
+        Form Submission example with <span class="text-danger">Alert!</span>
+      </h2>
+
+      <form class="container my-4">
+        <input type="text" placeholder="Enter your name" class="p-1" />
+        <button class="btn btn-accept" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <footer class="bg-dark text-light m-4 p-4 text-center">
+      <h1 class="title">Alerts</h1>
+    </footer>
+    <script>
+      const form = document.querySelector("form");
+
+      function handelSubmit(e) {
+        e.preventDefault();
+        checkInput();
+      }
+
+      function checkInput() {
+        let input = document.querySelector("input");
+        const alert = document.createElement("div");
+        if (input.value === "") {
+          alert.classList.add("alert", "alert-danger");
+          alert.innerHTML = `
+          
+          <div class="alert-close">
+              <span> Please enter your full name </span>
+              <button class="btn btn-close">&times;</button>
+          </div>
+    
+    `;
+        } else {
+          alert.classList.add("alert", "alert-success");
+          alert.innerHTML = `<div class="alert-close">
+            <span> Tank you ${input.value} </span>
+      <button class="btn btn-close">&times;</button>
+            </div>`;
+        }
+
+        input.value = "";
+
+        // Add alert before the form element
+        form.before(alert);
+
+        closeAlert();
+        // Remove alert
+        setTimeout(() => {
+          alert.classList.add("fadeAlert");
+          setTimeout(() => {
+            alert.style.display = "none";
+          }, 500);
+        }, 3000);
+      }
+
+      // Reset input
+
+      document.querySelector("button[type=submit]").onclick = (e) => {
+        handelSubmit(e);
+      };
+
+      // Add event listener to the close button
+      function closeAlert() {
+        const alertCloseBtn_s = document.querySelectorAll(".alert .btn-close");
+        alertCloseBtn_s.forEach(
+          (alertCloseBtn) =>
+            (alertCloseBtn.onclick = (e) => {
+              e.target.parentElement.parentElement.classList.add("fadeAlert");
+              setTimeout(() => {
+                e.target.parentElement.parentElement.style.display = "none";
+              }, 500);
+            })
+        );
+      }
+
+      closeAlert();
+    </script>
+  </body>
+</html>

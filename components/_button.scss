@@ -49,3 +49,29 @@
     }
   }
 }
+
+/* Close buttons */
+
+.btn-close {
+  background-color: transparent;
+  color: #333;
+  font-size: $lg * 1rem;
+  font-weight: bolder;
+  box-shadow: none;
+  padding: 0;
+  &:hover {
+    color: $danger-color;
+    background: initial;
+  }
+  &-white {
+    background-color: #fff;
+    color: #333;
+    &:hover {
+      color: #fff;
+    }
+  }
+  &-dark {
+    background-color: #111;
+    color: #fff;
+  }
+}
