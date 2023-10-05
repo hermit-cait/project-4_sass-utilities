@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sassUtilities.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Navigation Component</title>
+  </head>
+  <body>
+    <h1 class="title text-center">Navigation Component</h1>
+    <div class="container">
+      <nav class="navbar bg-accept text-light mb-3">
+        <div class="navbar-logo">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler btn btn-sm">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="container container-sm">
+      <nav class="navbar bg-info text-light">
+        <div class="navbar-logo">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler btn btn-sm">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <script>
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("resize", () => {
+        let WindowWidth = window.innerWidth;
+
+        if (WindowWidth > 768) {
+          navbarCollapse.classList.remove("showNavbar");
+          navbar.classList.remove("showNavbar");
+          if (navbarTogglerIcon.contains("fa-times")) {
+            navbarTogglerIcon.remove("fa-times");
+            navbarTogglerIcon.add("fa-bars");
+          }
+        }
+      });
+
+      const navbarToggler = document.querySelector(".navbar-toggler");
+      const navbarCollapse = document.querySelector(".navbar-nav");
+      let navbarTogglerIcon = navbarToggler.querySelector("i").classList;
+      navbarToggler.onclick = () => {
+        navbarCollapse.classList.toggle("showNavbar");
+        navbar.classList.toggle("showNavbar");
+
+        if (navbarTogglerIcon.contains("fa-bars")) {
+          navbarTogglerIcon.remove("fa-bars");
+          navbarTogglerIcon.add("fa-times");
+        } else {
+          navbarTogglerIcon.remove("fa-times");
+          navbarTogglerIcon.add("fa-bars");
+        }
+      };
+    </script>
+  </body>
+</html>

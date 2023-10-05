@@ -1,0 +1,65 @@
+/* Cards */
+
+.card {
+  @include displayFlex(column);
+  box-shadow: 0 0.5rem 1rem rgba($color: #000, $alpha: 0.15);
+  border-radius: 0.5rem;
+  &-body {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    .btn {
+      margin-bottom: 2rem;
+    }
+  }
+  &-title {
+    font-size: 1rem * $xl;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  &-text {
+    font-size: 1rem * $md;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  /* Card header and footer */
+
+  &-header {
+    background-color: rgba($color: #000, $alpha: 0.05);
+    width: 100%;
+    padding: 1rem;
+    font-weight: 500;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom: 1px solid rgba($color: #666, $alpha: 0.125);
+  }
+  &-footer {
+    @extend .card-header;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom: none;
+    border-top: 1px solid rgba($color: #666, $alpha: 0.125);
+  }
+  img {
+    width: 100%;
+    height: fit-content;
+    background-color: aquamarine;
+  }
+}
+
+/* Card types */
+
+@each $card-type, $color in $colors-map {
+  .card-#{$card-type} {
+    .card-header {
+      background-color: $color;
+      color: setTextColor($color);
+    }
+  }
+}
+
+
+

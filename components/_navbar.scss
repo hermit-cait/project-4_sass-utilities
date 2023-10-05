@@ -1,0 +1,58 @@
+/* Navigation */
+
+.navbar {
+  @include displayFlex(row);
+  box-shadow: 0 2px 4px rgba($color: #000, $alpha: 0.1);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  user-select: none;
+  &-logo {
+    width: 100%;
+    @include displayFlex(row);
+    justify-content: space-between;
+    margin-right: 1rem;
+  }
+  &-brand {
+    margin-left: 1rem;
+    color: inherit;
+  }
+  &-toggler {
+    display: none;
+    margin-left: auto;
+    @media screen and (max-width: 768px) {
+      display: block;
+      margin-right: 1rem;
+    }
+  }
+  &-nav {    
+    @include displayFlex(row);
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+    .nav {
+      &-item {
+        margin-right: 1rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &-link {
+        color: inherit;
+      }
+    }
+    &.showNavbar {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 15px;
+      margin: 15px;
+      width: 100%;
+    }
+  }
+  &.showNavbar {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
